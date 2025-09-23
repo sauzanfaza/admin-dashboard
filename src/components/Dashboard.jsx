@@ -1,22 +1,11 @@
-import { dashboardStats } from "../data/data";
+import Overview from "./Overview";
+import Chart from "./Chart"
 
 export default function Dashboard() {
-    return (
-    <div className="p-6">
-        <div className="grid grid-cols-3 gap-4">
-            <div className="bg-white p-4 shadow rounded-xl">
-            <p>Total Users</p>
-            <h2 className="text-xl font-bold">{dashboardStats.totalUsers}</h2>
+    return(
+        <div className="min-h-screen bg-[#6D94C5] p-4">
+            <Overview />
+            <Chart />
         </div>
-        <div className="bg-white p-4 shadow rounded-xl">
-            <p>Total Products</p>
-            <h2 className="text-xl font-bold">{dashboardStats.totalProducts}</h2>
-        </div>
-        <div className="bg-white p-4 shadow rounded-xl">
-            <p>Total Revenue</p>
-            <h2 className="text-xl font-bold">Rp {dashboardStats.totalRevenue}</h2>
-        </div>
-        </div>
-    </div>
-    );
+    )
 }

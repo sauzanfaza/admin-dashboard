@@ -6,7 +6,7 @@ import { IoMdLogOut } from "react-icons/io";
 
 export default function Sidebar() {
     return (
-        <aside className="w-40 h-screen bg-gray-800 text-white p-4 flex flex-col">
+        <aside className="w-40 min-h-screen bg-gray-800 text-white p-4 flex flex-col">
             {/* Profile Section */}
             <div className="grid place-items-center mb-2 p-4">
                 <img
@@ -25,13 +25,13 @@ export default function Sidebar() {
                         <LuLayoutDashboard /> Dashboard
                     </a>
                     <a href="#" className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[12px]">
-                        <FaShoppingCart /> Product
+                        <FaShoppingCart /> Orders
                     </a>
                     <a href="#" className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[12px]">
                         <FaUser /> Users
                     </a>
                     <a href="#" className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[12px]">
-                        <BsStack /> Orders
+                        <BsStack /> Products
                     </a>
                 </div>
             </nav>

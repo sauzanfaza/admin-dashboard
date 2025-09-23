@@ -6,11 +6,11 @@ export default function Navbar() {
             <div className="flex items-center">
             <h2 className="text-lg font-semibold">Welcome Sauzan Faza!</h2>
             </div>
-            <div class="flex w-80">
+            <div class="flex w-68">
                 <input
                     type="text"
                     placeholder="Search"
-                    className="flex-1 border border-sky-800 rounded-l-full pl-4 py-2 focus:outline-none"
+                    className="flex-1 border border-sky-800 rounded-l-full pl-4 py-1 focus:outline-none"
                 />
                 <button
                     className="bg-gray-300 border border-l-0 border-sky-800 rounded-r-full px-4 flex items-center justify-center hover:text-sky-800"
