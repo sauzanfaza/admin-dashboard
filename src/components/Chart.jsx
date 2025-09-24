@@ -11,8 +11,8 @@ import {
 
 export default function Chart() {
     return (
-        <div className="py-2">
-            <div className="grid grid-cols-2 gap-6">
+        <div className="py-2 w-full">
+            <div className="">
             <div className="py-2 bg-white rounded-md shadow-md">
             <h2 className="text-lg font-bold mb-4 px-4">Revenue Over Time</h2>
             <div className="px-2 focus:outline-none">
@@ -29,10 +29,6 @@ export default function Chart() {
                 </LineChart>
             </ResponsiveContainer>
             </div>
-            </div>
-            <div className="p-4 bg-white rounded-xl shadow-md">
-                <h1>Another components soon</h1>
-                <p>Soon i promise, i wont be lazy and said "tomorrow" haha</p>
             </div>
             </div>
         </div>

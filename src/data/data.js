@@ -19,3 +19,105 @@ export const revenueData = [
     { month: "Nov", revenue: 20000 },
     { month: "Dec", revenue: 25100 },
 ];  
+
+export const recentOrders = [
+    {
+      id: "#4321",
+      customer: "John Doe",
+      date: "2025-09-22",
+      total: 500000,
+      status: "Paid",
+    },
+    {
+      id: "#4320",
+      customer: "Jane Smith",
+      date: "2025-09-21",
+      total: 200000,
+      status: "Pending",
+    },
+    {
+      id: "#4319",
+      customer: "Michael Johnson",
+      date: "2025-09-20",
+      total: 750000,
+      status: "Cancelled",
+    },
+    {
+      id: "#4318",
+      customer: "Emily Brown",
+      date: "2025-09-19",
+      total: 320000,
+      status: "Paid",
+    },
+    {
+      id: "#4317",
+      customer: "David Wilson",
+      date: "2025-09-18",
+      total: 150000,
+      status: "Paid",
+    },
+  ];
+  
+  export const topSales = [
+    {
+      id: 1,
+      product: "Wireless Mouse",
+      unitsSold: 320,
+      revenue: 4800000,
+    },
+    {
+      id: 2,
+      product: "Mechanical Keyboard",
+      unitsSold: 280,
+      revenue: 11200000,
+    },
+    {
+      id: 3,
+      product: "Gaming Headset",
+      unitsSold: 250,
+      revenue: 7500000,
+    },
+    {
+      id: 4,
+      product: "USB-C Charger",
+      unitsSold: 200,
+      revenue: 3000000,
+    },
+    {
+      id: 5,
+      product: "Laptop Stand",
+      unitsSold: 180,
+      revenue: 2700000,
+    },
+    {
+      id: 6,
+      product: "External Hard Drive",
+      unitsSold: 160,
+      revenue: 12800000,
+    },
+    {
+      id: 7,
+      product: "Bluetooth Speaker",
+      unitsSold: 150,
+      revenue: 4500000,
+    },
+    {
+      id: 8,
+      product: "Smartwatch",
+      unitsSold: 140,
+      revenue: 21000000,
+    },
+    {
+      id: 9,
+      product: "HD Webcam",
+      unitsSold: 120,
+      revenue: 3600000,
+    },
+    {
+      id: 10,
+      product: "Portable SSD",
+      unitsSold: 100,
+      revenue: 15000000,
+    },
+  ];
+  
