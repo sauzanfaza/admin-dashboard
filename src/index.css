@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+.recharts-active-bar path {
+  stroke: none !important;
+  outline: none !important;
+}

@@ -119,5 +119,16 @@ export const recentOrders = [
       unitsSold: 100,
       revenue: 15000000,
     },
+    {
+      id: 11,
+      product: "speaker",
+      unitsSold: 150,
+      revenue: 11000000,
+    },
+    {
+      id: 12,
+      product: "headset",
+      unitsSold: 90,
+      revenue: 1000000,
+    },
   ];
-  
