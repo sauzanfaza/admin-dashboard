@@ -1,15 +1,14 @@
-import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
-import Dashboard from "./components/Dashboard";
+import { Routes, Route } from 'react-router-dom'
+import Regis from './pages/Regis'
+import Login from './pages/Login'
+import MainBoard from './components/MainBoard'
 
 export default function Home() {
     return (
-        <div className="flex">
-            <Sidebar />
-            <main className="flex-1 bg-gray-100 min-h-screen">
-                <Navbar />
-                <Dashboard />
-            </main>
-        </div>
+        <Routes>
+            <Route path="/" element={<Regis />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/mainBoard" element={<MainBoard />} />
+        </Routes>
     )
 }
