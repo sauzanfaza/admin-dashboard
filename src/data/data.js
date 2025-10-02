@@ -132,3 +132,8 @@ export const recentOrders = [
       revenue: 1000000,
     },
   ];
+
+// export const users = [
+//   { username: "admin", email: "admin@mail.com", password: "1234" },
+//   { username: "user1", email: "user1@mail.com", password: "abcd" },
+// ];
