@@ -4,7 +4,11 @@ import { FaUser } from "react-icons/fa";
 import { BsStack } from "react-icons/bs";
 import { IoMdLogOut } from "react-icons/io";
 
-export default function Sidebar() {
+export default function Sidebar({user, setUser}) {
+    const handleLogout = () => {
+        setUser(null)
+    }
+
     return (
         <aside className="w-40 min-h-screen bg-gray-800 text-white p-4 flex flex-col">
             {/* Profile Section */}
@@ -15,7 +19,7 @@ export default function Sidebar() {
                     className="w-16 h-16 max-w-none rounded-full object-cover object-center block"
                     style={{ aspectRatio: "1 / 1" }}
                 />
-                <h3 className="text-sm pt-1 text-center">Sauzan Faza</h3>
+                <h3 className="text-sm pt-1 text-center">{user?.name}</h3>
             </div>
 
             {/* Navigation Links */}
@@ -38,7 +42,9 @@ export default function Sidebar() {
 
             {/* Logout Button - stays at bottom */}
             <div className="mt-auto border-gray-700 pt-4">
-                <button className="flex items-center gap-2 w-full px-4 py-2 rounded-lg hover:bg-red-800 hover:text-white transition">
+                <button 
+                    onClick={handleLogout}
+                    className="flex items-center gap-2 w-full px-4 py-2 rounded-lg hover:bg-red-800 hover:text-white transition">
                     <IoMdLogOut /> Logout
                 </button>
             </div>

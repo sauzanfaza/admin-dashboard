@@ -1,10 +1,10 @@
 import { FaSearch } from "react-icons/fa";
 
-export default function Navbar() {
+export default function Navbar({user}) {
     return (
         <header className="w-full bg-white shadow p-4 flex items-center justify-between">
             <div className="flex items-center">
-            <h2 className="text-lg font-semibold">Welcome Sauzan Faza!</h2>
+            <h2 className="text-lg font-semibold">Welcome {user?.name}</h2>
             </div>
             <div class="flex w-68">
                 <input

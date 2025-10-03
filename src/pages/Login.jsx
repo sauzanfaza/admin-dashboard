@@ -1,13 +1,14 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-export default function Login() {
+export default function Login({setUser}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
+        setUser({name: username})
     
         const users = JSON.parse(localStorage.getItem("users")) || [];
         const user = users.find(
@@ -50,6 +51,15 @@ export default function Login() {
                     >
                         Log In
                     </button>
+                    {/* <p className="mt-4 text-center text-sm">
+                        Don't have any account?{' '}
+                    <Link 
+                        to="/regis"
+                        className="text-sm cursor-pointer hover:text-sky-600 underline"
+                    >
+                        Login
+                    </Link>
+                    </p> */}
                 </form>
             </div>
         </div>
