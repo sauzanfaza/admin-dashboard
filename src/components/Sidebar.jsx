@@ -3,10 +3,14 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { BsStack } from "react-icons/bs";
 import { IoMdLogOut } from "react-icons/io";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Sidebar({user, setUser}) {
+    const navigate = useNavigate();
     const handleLogout = () => {
-        setUser(null)
+        localStorage.removeItem("LoggedInUser")
+        alert("Berhasil Logout:))")
+        navigate("/")
     }
 
     return (

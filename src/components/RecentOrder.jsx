@@ -2,7 +2,7 @@ import { recentOrders } from "../data/data"
 
 export default function RecentOrder() {
     return(
-        <div className="p-4 bg-white rounded-md shadow-md mt-4 w-[354px]">
+        <div className="p-4 bg-white rounded-md shadow-md mt-4 w-full">
             <h1 className="text-xl font-bold mb-3">Recent Orders</h1>
             <div className="overflow-x-auto">
             <table className="w-full">
