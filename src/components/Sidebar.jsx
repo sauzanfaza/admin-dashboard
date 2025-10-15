@@ -3,7 +3,8 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { BsStack } from "react-icons/bs";
 import { IoMdLogOut } from "react-icons/io";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Sidebar({user, setUser}) {
     const navigate = useNavigate();
@@ -29,12 +30,14 @@ export default function Sidebar({user, setUser}) {
             {/* Navigation Links */}
             <nav className="flex flex-col items-center w-full">
                 <div className="w-full max-w-[150px] text-left space-y-1">
-                    <a href="#" className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[12px]">
+                    <Link to="/mainBoard"
+                        className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[12px]">
                         <LuLayoutDashboard /> Dashboard
-                    </a>
-                    <a href="#" className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[12px]">
+                    </Link>
+                    <Link to="/orders"
+                        className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[12px]">
                         <FaShoppingCart /> Orders
-                    </a>
+                    </Link>
                     <a href="#" className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[12px]">
                         <FaUser /> Users
                     </a>
@@ -44,7 +47,7 @@ export default function Sidebar({user, setUser}) {
                 </div>
             </nav>
 
-            {/* Logout Button - stays at bottom */}
+            {/* Logout Button*/}
             <div className="mt-auto border-gray-700 pt-4">
                 <button 
                     onClick={handleLogout}

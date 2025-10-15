@@ -1,6 +1,10 @@
 import { recentOrders } from "../data/data"
 
 export default function RecentOrder() {
+    const sortedorders = [...recentOrders].sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+    )
+    const lastorders = sortedorders.slice(0, 5)
     return(
         <div className="p-4 bg-white rounded-md shadow-md mt-4 w-full">
             <h1 className="text-xl font-bold mb-3">Recent Orders</h1>
@@ -15,7 +19,7 @@ export default function RecentOrder() {
                 </tr>
                 </thead>
                 <tbody>
-                {recentOrders.map((order) => (
+                {lastorders.map((order) => (
                     <tr key={order.id} className="hover:bg-gray-50">
                     <td className="py-2 px-2 border-b border-gray-200 text-[12px] text-gray-700">{order.id}</td>
                     <td className="py-2 px-2 border-b border-gray-200 text-[12px] text-gray-700">{order.customer}</td>
