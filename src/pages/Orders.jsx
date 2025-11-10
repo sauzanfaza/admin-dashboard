@@ -2,15 +2,30 @@ import Sidebar from "../components/Sidebar"
 import Navbar from "../components/Navbar"
 import { recentOrders } from "../data/data"
 import { useState } from "react"
+import { useSearch } from "../../SearchContext"
+import { useMemo } from "react"
 
 export default function Orders() {
     const [selectedStatus, setSelectedStatus] = useState("All Orders")
-    
-    const filteredOrders = selectedStatus === "All Orders"
-        ? recentOrders 
-        : recentOrders.filter((order) => 
-            order.status.toLowerCase() === selectedStatus.toLowerCase())
-    
+    const { keyword } = useSearch()
+
+    const filteredOrders = useMemo(() => {
+        return recentOrders.filter((order) => {
+            const lowerKeyword = keyword.toLowerCase()
+            const matchKeyword = keyword
+                ? order.customer.toLowerCase().includes(lowerKeyword) ||
+                 order.address.toLowerCase().includes(lowerKeyword) ||
+                 order.id.toString().includes(lowerKeyword)
+                : true //semua data cocok
+            
+            const matchStatus = selectedStatus === "All Orders"
+            ? true
+            : order.status.toLowerCase() === selectedStatus.toLowerCase()
+
+            return matchKeyword && matchStatus
+        })
+    }, [keyword, selectedStatus])
+
     return (
         <>
         <div className="flex">
@@ -62,6 +77,12 @@ export default function Orders() {
                             }`}>{order.status}</div>
                         </div>
                     ))}
+
+                    {filteredOrders.length === 0 && (
+                        <p className="text-center text-gray-400 mt-6">
+                            tidak ada data yang cocok
+                        </p>
+                    )}
                 </div>
             </main>
         </div>

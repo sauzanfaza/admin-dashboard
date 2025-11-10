@@ -1,6 +1,9 @@
 import { FaSearch } from "react-icons/fa";
+import { useSearch } from "../../SearchContext";
 
 export default function Navbar({user, title}) {
+    const { setKeyword } = useSearch()
+
     return (
         <header className="w-full bg-white shadow p-4 flex items-center justify-between">
             <div className="flex items-center">
@@ -12,6 +15,7 @@ export default function Navbar({user, title}) {
                 <input
                     type="text"
                     placeholder="Search"
+                    onChange={(e) => setKeyword(e.target.value)}
                     className="flex-1 border border-sky-800 rounded-l-full pl-4 py-1 focus:outline-none"
                 />
                 <button
