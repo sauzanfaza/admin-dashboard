@@ -38,9 +38,11 @@ export default function Sidebar({user, setUser}) {
                         className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[20px]">
                         <FaShoppingCart /> Orders
                     </Link>
-                    <a href="#" className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[20px]">
+                    <Link to="/user-page"
+                        className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[20px]">
                         <FaUser /> Users
-                    </a>
+                
+                    </Link>
                     <a href="#" className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[20px]">
                         <BsStack /> Products
                     </a>

@@ -19,8 +19,8 @@ export default function Orders() {
                 : true //semua data cocok
             
             const matchStatus = selectedStatus === "All Orders"
-            ? true
-            : order.status.toLowerCase() === selectedStatus.toLowerCase()
+            ? true //apakah semua data cocok?
+            : order.status.toLowerCase() === selectedStatus.toLowerCase() //tampilkan sesuai filter status
 
             return matchKeyword && matchStatus
         })
