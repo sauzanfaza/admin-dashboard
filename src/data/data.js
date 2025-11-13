@@ -171,7 +171,9 @@ export const recentOrders = [
     },
   ];
 
-// export const users = [
-//   { username: "admin", email: "admin@mail.com", password: "1234" },
-//   { username: "user1", email: "user1@mail.com", password: "abcd" },
-// ];
+export const users = [
+  { id:1, username: "admin", email: "admin@mail.com", password: "1234" , date: "11-13-2025", status: "active"},
+  { id:2, username: "user1", email: "user1@mail.com", password: "abcd" , date: "12-13-2025", status: "active"},
+  { id:3, username: "user2", email: "user2@mail.com", password: "abcde", date: "13-13-2025", status: "deactive"},
+  { id:4, username: "user3", email: "user2@mail.com", password: "abcde", date: "14-13-2025", status: "delete"},
+]
