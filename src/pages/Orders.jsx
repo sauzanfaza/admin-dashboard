@@ -48,7 +48,6 @@ export default function Orders() {
                         </button>
                 ))}
                 </div>
-                {/* <div></div> nnti di isi kok:)) */}
                 </div>
                 
                 <div className="bg-white min-h-screen py-4 px-8 text-sm">
