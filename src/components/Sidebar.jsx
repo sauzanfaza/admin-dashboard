@@ -43,9 +43,10 @@ export default function Sidebar({user, setUser}) {
                         <FaUser /> Users
                 
                     </Link>
-                    <a href="#" className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[20px]">
+                    <Link to="/products"
+                        className="flex items-center gap-2 hover:bg-sky-600 px-4 py-2 rounded-lg text-[20px]">
                         <BsStack /> Products
-                    </a>
+                    </Link>
                 </div>
             </nav>
 
