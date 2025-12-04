@@ -62,7 +62,7 @@ export default function Orders() {
 
                      {/* data list */}
                     {filteredOrders.map((order) => (
-                        <div key={order.id} className="grid grid-cols-5 bg-white border shadow-lg rounded-lg mt-4 py-2 shaodw-md hover:bg-[#6D94C5]">
+                        <div key={order.id} className="grid grid-cols-5 bg-white border shadow-lg rounded-lg mt-4 py-2 hover:bg-[#6D94C5]">
                             <div className="p-2 text-center">{order.id}</div>
                             <div className="p-2 text-center">{order.customer}</div>
                             <div className="p-2 text-center">{order.address}</div>
