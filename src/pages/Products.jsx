@@ -126,7 +126,7 @@ export default function Products() {
                                         {isEdit ? "Edit Product" : "Add Product"}
                                     </h2>
                                     <button
-                                        className="text-2xl font-bold hover:text-red-600"
+                                        className="text-xl font-bold hover:text-red-600 cursor-pointer"
                                         onClick={() => setShowModal(false)}
                                     >
                                         ✕
@@ -167,7 +167,7 @@ export default function Products() {
                                 {/* BUTTONS */}
                                 <div className="flex justify-end space-x-2">
                                     <button
-                                        className="px-4 py-2 bg-gray-300 rounded-md"
+                                        className="px-4 py-2 bg-gray-300 rounded-md cursor-pointer"
                                         onClick={() => setShowModal(false)}
                                     >
                                         Cancel
@@ -175,14 +175,14 @@ export default function Products() {
 
                                     {isEdit ? (
                                         <button
-                                            className="px-4 py-2 bg-blue-500 text-white rounded-md"
+                                            className="px-4 py-2 bg-blue-500 text-white rounded-md cursor-pointer hover:bg-blue-600"
                                             onClick={saveEdit}
                                         >
                                             Save
                                         </button>
                                     ) : (
                                         <button
-                                            className="px-4 py-2 bg-green-500 text-white rounded-md"
+                                            className="px-4 py-2 bg-green-500 text-white rounded-md cursor-pointer hover:bg-green-600"
                                             onClick={handleAddProduct}
                                         >
                                             Add
