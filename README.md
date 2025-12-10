@@ -1,12 +1,28 @@
-# React + Vite
+📊 Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and modern **Admin Dashboard** built with **React + Vite**, designed to provide a simple and responsive interface for managing data.  
+This project focuses on reusable components, clean UI, and smooth user interaction.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Tech Stack
+- **React (Vite)**
+- **Tailwind CSS**
+- **JavaScript (ES6+)**
+- **React Icons**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✨ Features
+- 🔹 Clean & responsive dashboard layout  
+- 🔹 Sidebar navigation  
+- 🔹 Topbar / Navbar  
+- 🔹 Product list with search  
+- 🔹 CRUD-ready structure (components already set up)  
+- 🔹 Modern UI with Tailwind CSS  
+- 🔹 Organized folder structure  
+
+---
+📸 Preview
+<img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/8188af82-de27-4d09-b0bb-1570ff168039" />
+
