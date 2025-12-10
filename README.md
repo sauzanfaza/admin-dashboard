@@ -1,12 +1,12 @@
 📊 Admin Dashboard
 
-A clean and modern **Admin Dashboard** built with **React + Vite**, designed to provide a simple and responsive interface for managing data.  
+A clean and modern Admin Dashboard built with React, designed to provide a simple and responsive interface for managing data.
 This project focuses on reusable components, clean UI, and smooth user interaction.
 
 ---
 
 🚀 Tech Stack
-- **React (Vite)**
+- **React**
 - **Tailwind CSS**
 - **JavaScript (ES6+)**
 - **React Icons**
