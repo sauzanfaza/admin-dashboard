@@ -14,13 +14,13 @@ This project focuses on reusable components, clean UI, and smooth user interacti
 ---
 
 ✨ Features
-- 🔹 Clean & responsive dashboard layout  
-- 🔹 Sidebar navigation  
-- 🔹 Topbar / Navbar  
-- 🔹 Product list with search  
-- 🔹 CRUD-ready structure (components already set up)  
-- 🔹 Modern UI with Tailwind CSS  
-- 🔹 Organized folder structure  
+- Clean dashboard layout  
+- Sidebar navigation  
+- Topbar / Navbar  
+- Product list with search  
+- CRUD-ready structure (components already set up)  
+- Modern UI with Tailwind CSS  
+- Organized folder structure  
 
 ---
 📸 Preview
