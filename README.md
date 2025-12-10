@@ -39,4 +39,4 @@ cd admin-dashboard
 pnpm install
 
 # Run the development server
-pnpm dev
+pnpm run dev
