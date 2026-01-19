@@ -1,5 +1,6 @@
 import Sidebar from "../components/Sidebar"
 import Navbar from "../components/Navbar"
+import SearchBar from "../components/SearchBar"
 import { recentOrders } from "../data/data"
 import { useState } from "react"
 import { useSearch } from "../../SearchContext"
@@ -31,7 +32,9 @@ export default function Orders() {
         <div className="flex">
             <Sidebar />
             <main className="flex-1 bg-gray-100">
-                <Navbar title="Orders"/>
+                <Navbar title="Orders"> 
+                 <SearchBar />    
+                </Navbar>
                 {/*filter kategories  */}
                 <div className="grid grid-cols-2 bg-white px-8 py-4">
                 <div className="grid grid-cols-4 items-start">

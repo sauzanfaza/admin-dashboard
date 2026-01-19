@@ -6,6 +6,7 @@ import { useSearch } from "../../SearchContext";
 import { useMemo, useState } from "react";
 import { BiEdit } from "react-icons/bi";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import SearchBar from "../components/SearchBar";
 
 export default function Products() {
     const { keyword } = useSearch();
@@ -115,7 +116,9 @@ export default function Products() {
             <div className="flex">
                 <Sidebar />
                 <main className="flex-1 bg-gray-100">
-                    <Navbar title="Products" />
+                    <Navbar title="Products" >
+                        <SearchBar />
+                    </Navbar>
 
                     {/* MODAL ADD / EDIT */}
                     {showModal && (

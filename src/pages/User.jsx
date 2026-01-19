@@ -4,6 +4,7 @@ import { users } from "../data/data"
 import { useState } from "react"
 import { useSearch } from "../../SearchContext"
 import { useMemo } from "react"
+import SearchBar from "../components/SearchBar"
 
 export default function User() {
     const [selectedStatus, setSelectedStatus] = useState("All Status")
@@ -32,7 +33,9 @@ export default function User() {
         <div className="flex">
             <Sidebar />
             <main className="flex-1 bg-gray-100">
-                <Navbar title = "Users" />
+                <Navbar title = "Users">
+                    <SearchBar />
+                </Navbar>
                 <div className="grid grid-cols-2 bg-white px-8 py-4">
                 <div className="grid grid-cols-4 items-start">
                 {["All Status", "Active", "Deactive", "Delete"].map((status) => (
