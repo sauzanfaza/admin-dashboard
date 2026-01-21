@@ -7,14 +7,14 @@ export default function TopSales() {
     .slice(0, 10);
 
     return (
-    <div className="bg-white h-[500px] my-4 mx-3 rounded-md shadow-md p-4 focus:outline-none">
-        <h1 className="font-semibold text-lg mb-4">Top 10 Sales</h1>
+    <div className="bg-white lg:py-8 xl:py-11 my-4 mx-3 rounded-md shadow-md p-4 focus:outline-none">
+        <h1 className="font-semibold md:text-lg xl:text-4xl mb-4  xl:mx-4 xl:mb-14 xl:mt-2">Top 10 Sales</h1>
         <div className="">
-            <ResponsiveContainer width="100%" height={400}>
+            <ResponsiveContainer width="100%" height={600}>
             <BarChart
                 data={sortedData}
                 layout="vertical"
-                margin={{ top: 10, right:30, left:0,  bottom: 10 }}
+                margin={{ top: 10, right:40, left:0,  bottom: 10 }}
             >
             <XAxis type="number" />
             <YAxis dataKey="product" type="category" width={80} tick={{ fontSize: 10 }} />

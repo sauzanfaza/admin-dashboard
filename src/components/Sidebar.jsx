@@ -3,10 +3,8 @@ import { FaShoppingCart, FaUser } from "react-icons/fa"
 import { BsStack } from "react-icons/bs"
 import { IoMdLogOut } from "react-icons/io"
 import { Link, useNavigate } from "react-router-dom"
-import { useState } from "react"
 
-export default function Sidebar({ user }) {
-  const [isOpen, setIsOpen] = useState(false)
+export default function Sidebar({ user, isOpen, setIsOpen }) {
   const navigate = useNavigate()
 
   function handleLogout() {
@@ -14,114 +12,57 @@ export default function Sidebar({ user }) {
     navigate("/")
   }
 
-  const menuClass =
-    "flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-sky-600 text-lg"
+  const menuClass = "flex items-center gap-2 lg:gap-3 px-4 py-2 lg:py-4 rounded-lg hover:bg-sky-600 text:md md:text-lg lg:text-2xl"
 
   return (
     <>
-      {/* ================= DESKTOP SIDEBAR ================= */}
-      <aside className="hidden lg:flex w-60 min-h-screen bg-gray-800 text-white p-4 flex-col">
-        {/* profile */}
-        <div className="grid place-items-center mb-6">
-          <img
-            src="./img/profile.jpeg"
-            alt="profile"
-            className="w-16 h-16 rounded-full object-cover"
-          />
+      {/* DESKTOP SIDEBAR  */}
+      <aside className="hidden lg:flex lg:w-64 h-screen bg-gray-800 text-white p-4 flex-col sticky top-0">
+        <div className="grid place-items-center mb-14 mt-8">
+          <img src="./img/profile.jpeg" alt="profile" className="w-16 h-16 rounded-full object-cover" />
           <h3 className="text-sm mt-2">{user?.name}</h3>
         </div>
 
-        {/* menu */}
         <nav className="space-y-2">
-          <Link to="/mainBoard" className={menuClass}>
-            <LuLayoutDashboard /> Dashboard
-          </Link>
-          <Link to="/orders" className={menuClass}>
-            <FaShoppingCart /> Orders
-          </Link>
-          <Link to="/user-page" className={menuClass}>
-            <FaUser /> Users
-          </Link>
-          <Link to="/products" className={menuClass}>
-            <BsStack /> Products
-          </Link>
+          <Link to="/mainBoard" className={menuClass}><LuLayoutDashboard /> Dashboard</Link>
+          <Link to="/orders" className={menuClass}><FaShoppingCart /> Orders</Link>
+          <Link to="/user-page" className={menuClass}><FaUser /> Users</Link>
+          <Link to="/products" className={menuClass}><BsStack /> Products</Link>
         </nav>
 
-        {/* logout */}
-        <button
-          onClick={handleLogout}
-          className="mt-auto flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-red-800"
-        >
+        <button onClick={handleLogout} className="mt-auto flex items-center lg:text-2xl gap-2 lg:gap-3 px-4 py-2 lg:py-6 rounded-lg hover:bg-red-800">
           <IoMdLogOut /> Logout
         </button>
       </aside>
 
-      {/* ================= BURGER BUTTON (MD & MOBILE) ================= */}
-      <button
-        onClick={() => setIsOpen(true)}
-        className="lg:hidden fixed  z-50 text-2xl text-white bg-gray-800 p-2 rounded"
-      >
-        ☰
-      </button>
-
-      {/* ================= MOBILE SIDEBAR (OVERLAY) ================= */}
+      {/* MOBILE SIDEBAR (OVERLAY) */}
       {isOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden">
+        <div className="fixed inset-0 z-50 lg:hidden">
           {/* backdrop */}
-          <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setIsOpen(false)}
-          />
+          <div className="absolute inset-0 bg-black/60" onClick={() => setIsOpen(false)} />
 
-          {/* sidebar */}
-          <aside className="relative w-50 min-h-screen bg-gray-800 text-white p-4 flex flex-col">
-            {/* profile */}
-            <div className="grid place-items-center mb-6">
-              <img
-                src="./img/profile.jpeg"
-                alt="profile"
-                className="w-16 h-16 rounded-full object-cover"
-              />
-              <h3 className="mx-4 text-sm mt-2">{user?.name}</h3>
+          {/* sidebar content */}
+          <aside className="relative w-40 md:w-44 h-screen bg-gray-800 text-white p-4 flex flex-col shadow-xl">
+            <button 
+              onClick={() => setIsOpen(false)}
+              className="absolute right-4 top-2 text-xl"
+            >
+              ✕
+            </button>
+            
+            <div className="grid place-items-center mb-6 mt-8">
+              <img src="./img/profile.jpeg" alt="profile" className="w-16 h-16 rounded-full object-cover" />
+              <h3 className="text-sm mt-2">{user?.name}</h3>
             </div>
 
-            {/* menu */}
             <nav className="space-y-2">
-              <Link
-                to="/mainBoard"
-                onClick={() => setIsOpen(false)}
-                className={menuClass}
-              >
-                <LuLayoutDashboard /> Dashboard
-              </Link>
-              <Link
-                to="/orders"
-                onClick={() => setIsOpen(false)}
-                className={menuClass}
-              >
-                <FaShoppingCart /> Orders
-              </Link>
-              <Link
-                to="/user-page"
-                onClick={() => setIsOpen(false)}
-                className={menuClass}
-              >
-                <FaUser /> Users
-              </Link>
-              <Link
-                to="/products"
-                onClick={() => setIsOpen(false)}
-                className={menuClass}
-              >
-                <BsStack /> Products
-              </Link>
+              <Link to="/mainBoard" onClick={() => setIsOpen(false)} className={menuClass}><LuLayoutDashboard /> Dashboard</Link>
+              <Link to="/orders" onClick={() => setIsOpen(false)} className={menuClass}><FaShoppingCart /> Orders</Link>
+              <Link to="/user-page" onClick={() => setIsOpen(false)} className={menuClass}><FaUser /> Users</Link>
+              <Link to="/products" onClick={() => setIsOpen(false)} className={menuClass}><BsStack /> Products</Link>
             </nav>
 
-            {/* logout */}
-            <button
-              onClick={handleLogout}
-              className="mt-auto flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-red-800"
-            >
+            <button onClick={handleLogout} className="mt-auto flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-red-800">
               <IoMdLogOut /> Logout
             </button>
           </aside>

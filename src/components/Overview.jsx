@@ -6,9 +6,9 @@ import { FaShoppingCart } from "react-icons/fa";
 
 export default function Overview() {
     return (
-    <div className="p-4 bg-white rounded-md shadow-md">
+    <div className="p-4 lg:p-8 lg:my-4 bg-white rounded-md shadow-md">
         <h1 className="text-xl font-bold mb-3">Overview</h1>
-        <div className="grid grid-cols-4 gap-4 mb-2">
+        <div className="grid md:grid-cols-4 gap-4 mb-2">
             <div className="flex items-center gap-3 px-2 py-4 rounded-xl shadow-md border border-[#6D94C5]">
                 <div className="flex justify-center items-center w-12 h-12 border border-[#6D94C5] rounded-md bg-[#A1EEBD]">
                 <FaUser />
