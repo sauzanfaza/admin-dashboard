@@ -6,8 +6,9 @@ import { useState } from "react"
 import { useSearch } from "../../SearchContext"
 import { useMemo } from "react"
 
-export default function Orders() {
+export default function Orders({ user, setUser}) {
     const [selectedStatus, setSelectedStatus] = useState("All Orders")
+    const [isOpen, setIsOpen] = useState(false)
     const { keyword } = useSearch()
 
     const filteredOrders = useMemo(() => {
@@ -30,19 +31,21 @@ export default function Orders() {
     return (
         <>
         <div className="flex">
-            <Sidebar />
-            <main className="flex-1 bg-gray-100">
-                <Navbar title="Orders"> 
-                 <SearchBar />    
-                </Navbar>
+            <Sidebar user={user} isOpen={isOpen} setIsOpen={setIsOpen}/>
+            <main className="flex-1 bg-gray-100 text-[10px] md:text-lg">
+                <Navbar title="Orders"
+                    setIsOpen={setIsOpen}
+                > 
+                 <SearchBar  />    
+                </Navbar >
                 {/*filter kategories  */}
-                <div className="grid grid-cols-2 bg-white px-8 py-4">
-                <div className="grid grid-cols-4 items-start">
+                <div className="grid md:grid-cols-2 bg-white px-4 py-4 md:px-8 md:py-4">
+                <div className="grid grid-cols-4 items-start text-[12px] md:text-[14px] lg:text-lg xl:text-xl">
                 {["All Orders", "Paid", "Pending", "Cancelled"].map((status) => (
                         <button 
                             key={status}
                             onClick={() => setSelectedStatus(status)}
-                            className={`px-4 py-2font-medium transition ${
+                            className={`px-4 py-2 font-medium transition ${
                             selectedStatus === status
                             ? " font-bold underline"
                             : "hover:text-[#6D94C5]"
@@ -53,7 +56,7 @@ export default function Orders() {
                 </div>
                 </div>
                 
-                <div className="bg-white min-h-screen py-4 px-8 text-sm">
+                <div className="bg-white min-h-screen py-4 px-4 md:px-8 text-[12px] lg:text-lg">
                      {/*kategories*/}
                      <div className="grid grid-cols-5 bg-slate-200 rounded-lg">
                         <div className="p-2 text-center">Order ID</div>

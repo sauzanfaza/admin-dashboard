@@ -6,8 +6,9 @@ import { useSearch } from "../../SearchContext"
 import { useMemo } from "react"
 import SearchBar from "../components/SearchBar"
 
-export default function User() {
+export default function User({user, setUser}) {
     const [selectedStatus, setSelectedStatus] = useState("All Status")
+    const [isOpen, setIsOpen] = useState(false)
     const {keyword} = useSearch()
 
     const filterUser = useMemo(() => {
@@ -31,18 +32,20 @@ export default function User() {
     return(
         <>
         <div className="flex">
-            <Sidebar />
-            <main className="flex-1 bg-gray-100">
-                <Navbar title = "Users">
+            <Sidebar user={user} isOpen={isOpen} setIsOpen={setIsOpen}/>
+            <main className="flex-1 bg-gray-100 text-[10px] md:text-lg">
+                <Navbar title = "Users"
+                    setIsOpen={setIsOpen}
+                >
                     <SearchBar />
                 </Navbar>
-                <div className="grid grid-cols-2 bg-white px-8 py-4">
-                <div className="grid grid-cols-4 items-start">
+                <div className="grid md:grid-cols-2 text-[12px] md:text-lg bg-white md:px-8 px-4 py-4">
+                <div className="grid grid-cols-4 items-start lg:text-lg">
                 {["All Status", "Active", "Deactive", "Delete"].map((status) => (
                         <button 
                             key={status}
                             onClick={() => setSelectedStatus(status)}
-                            className={`px-4 py-2font-medium transition ${
+                            className={`px-4 py-2 font-medium transition ${
                             selectedStatus === status
                             ? " font-bold underline"
                             : "hover:text-[#6D94C5]"
@@ -52,7 +55,7 @@ export default function User() {
                 ))}
                 </div>
                 </div>
-                    <div className="grid grid-cols-4 items-center shadow-md rounded-lg px-4 py-2 m-10 bg-slate-200">
+                    <div className="grid grid-cols-4 items-center text-[12px] md:text-lg font-bold shadow-md rounded-lg px-4 py-2 md:py-4 lg:py-6 m-10 bg-slate-200">
                         <div className="text-center">Username</div>
                         <div className="text-center">Email</div>
                         <div className="text-center">Date-Join</div>
@@ -60,7 +63,7 @@ export default function User() {
                     </div>
 
                     {filterUser.map((user) => (
-                        <div key={user.id} className="grid grid-cols-4 bg-white shadow-lg rounded-lg mt-4 m-10 py-2 hover:bg-slate-300">
+                        <div key={user.id} className="grid grid-cols-4 break-words bg-white text-[12px] md:text-lg shadow-lg rounded-lg mt-4 m-10 py-4 md:py-4 lg:py-6 hover:bg-slate-300">
                             <div className="text-center">{user.username}</div>
                             <div className="text-center">{user.email}</div>
                             <div className="text-center">{user.date}</div>

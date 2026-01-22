@@ -42,7 +42,7 @@ export default function Sidebar({ user, isOpen, setIsOpen }) {
           <div className="absolute inset-0 bg-black/60" onClick={() => setIsOpen(false)} />
 
           {/* sidebar content */}
-          <aside className="relative w-40 md:w-44 h-screen bg-gray-800 text-white p-4 flex flex-col shadow-xl">
+          <aside className="relative w-40 md:w-44 h-[100%] bg-gray-800 text-white p-4 flex flex-col shadow-xl">
             <button 
               onClick={() => setIsOpen(false)}
               className="absolute right-4 top-2 text-xl"

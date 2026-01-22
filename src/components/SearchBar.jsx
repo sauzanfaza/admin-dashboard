@@ -7,7 +7,7 @@ export default function SearchBar() {
     return(
         <>
         {/* search bar */}
-            <div class="flex w-68">
+            <div class="flex md:w-68 px-2">
                 <input
                     type="text"
                     placeholder="Search"
