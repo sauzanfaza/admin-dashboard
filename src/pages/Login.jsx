@@ -27,7 +27,7 @@ export default function Login({setUser}) {
 
     return(
         <div className="fixed inset-0 flex justify-center items-center bg-slate-400">
-            <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-lg shadow-md w-[350px]">
+            <div className="flex flex-col items-center gap-4 p-8 m-4 md:m-0 bg-white rounded-lg shadow-md w-[350px]">
                 <h1>Log In</h1>
                 <form 
                 onSubmit={handleLogin}

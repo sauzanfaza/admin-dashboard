@@ -8,9 +8,10 @@ import { BiEdit } from "react-icons/bi";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import SearchBar from "../components/SearchBar";
 
-export default function Products() {
+export default function Products({user, setUser}) {
     const { keyword } = useSearch();
     const [products, setProducts] = useState(topSales);
+    const [isOpen, setIsOpen] = useState(false)
 
     // Modal
     const [showModal, setShowModal] = useState(false);
@@ -114,16 +115,16 @@ export default function Products() {
     return (
         <>
             <div className="flex">
-                <Sidebar />
-                <main className="flex-1 bg-gray-100">
-                    <Navbar title="Products" >
+                <Sidebar user={user} isOpen={isOpen} setIsOpen={setIsOpen}/>
+                <main className="flex-1 bg-gray-100 text-[10px] md:text-lg">
+                    <Navbar title="Products" setIsOpen={setIsOpen} >
                         <SearchBar />
                     </Navbar>
 
                     {/* MODAL ADD / EDIT */}
                     {showModal && (
                         <div className="fixed inset-0 backdrop-blur-sm bg-white/30 flex justify-center items-center z-50">
-                            <div className="bg-white p-6 rounded-2xl shadow-lg w-[400px]">
+                            <div className="bg-white m-4 md:m-0 p-4 md:p-6 rounded-2xl shadow-lg w-[400px]">
                                 <div className="flex justify-between mb-4">
                                     <h2 className="text-lg font-semibold">
                                         {isEdit ? "Edit Product" : "Add Product"}
@@ -197,11 +198,11 @@ export default function Products() {
                     )}
 
                     {/* BUTTON ADD */}
-                    <div className="grid grid-cols-2 bg-slate-200 shadow-md px-8 py-4 mx-4 my-4 rounded-2xl">
-                        <div className="items-start">Add Product</div>
+                    <div className="grid grid-cols-2 bg-slate-200 shadow-md px-8 py-2 md:py-4 mx-4 my-4 rounded-2xl">
+                        <div className="items-start py-2">Add Product</div>
                         <div className="justify-self-end">
                             <button
-                                className="text-2xl hover:scale-125 transition cursor-pointer"
+                                className="text-2xl py-1 md:text-4xl md:py-0 hover:scale-125 transition cursor-pointer"
                                 onClick={openAddModal}
                             >
                                 <CiSquarePlus />
@@ -210,7 +211,7 @@ export default function Products() {
                     </div>
 
                     {/* PRODUCT LIST */}
-                    <div className="bg-gray-100 min-h-screen py-4 px-8 text-sm">
+                    <div className="bg-gray-100 min-h-screen py-4 px-8 text-md md:text-lg">
                         <div className="grid grid-cols-4 bg-white shadow-2xl rounded-lg">
                             <div className="p-2 text-center">Product</div>
                             <div className="p-2 text-center">Units Sold</div>
