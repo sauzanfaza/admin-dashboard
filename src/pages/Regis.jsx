@@ -11,17 +11,20 @@ export default function Regis() {
     const handleRegister = (e) => {
         e.preventDefault();
 
+        // cek confirm pw
         if(password !== confirm) {
             alert("Password tidak sama!")
             return;
         }
 
+        // cek apakah sudah ada yg pake username yang sama
         const users = JSON.parse(localStorage.getItem("users")) || [];
         if(users.find((u) => u.username === username)) {
             alert("username telah dipakai!")
             return;
         }
 
+        // kalo gak ada masukan username baru, emailnya, dan pw nya, lalu redirect ke login page
         users.push({ username, email, password});
         localStorage.setItem("users", JSON.stringify(users))
         alert("Register berhasil!");
