@@ -72,8 +72,8 @@ export default function User({user, setUser}) {
                         <div key={index} className="grid grid-cols-4 break-words bg-white text-[12px] md:text-lg shadow-lg rounded-lg mt-4 m-10 py-4 md:py-4 lg:py-6 hover:bg-slate-300">
                             <div className="text-center">{user.username}</div>
                             <div className="text-center">{user.email}</div>
-                            {/* <div className="text-center">{user.date}</div>
-                            <div className={`text-center 
+                             <div className="text-center">{user.date}</div>
+                            {/*<div className={`text-center 
                                 ${user.status.toLowerCase() === "active" 
                                     ? "text-green-700"
                                     : user.status.toLowerCase() === "deactive" 

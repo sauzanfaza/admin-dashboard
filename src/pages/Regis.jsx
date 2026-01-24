@@ -17,6 +17,12 @@ export default function Regis() {
             return;
         }
 
+        //username, pw, sama confirm pw gak boleh kosong
+        if(username.trim() == "" || password.trim() == "" || confirm.trim() == "") {
+            alert("semua field wajib di isi dengan benar!")
+            return
+        }
+
         // cek apakah sudah ada yg pake username yang sama
         const users = JSON.parse(localStorage.getItem("users")) || [];
         if(users.find((u) => u.username === username)) {
@@ -24,8 +30,10 @@ export default function Regis() {
             return;
         }
 
+        const date = new Date().toISOString().slice(0,10)//data dibuat sistem bukan diinput user, jadi pake variabel aja jangan state
+
         // kalo gak ada masukan username baru, emailnya, dan pw nya, lalu redirect ke login page
-        users.push({ username, email, password});
+        users.push({ username, email, password, date});
         localStorage.setItem("users", JSON.stringify(users))
         alert("Register berhasil!");
         navigate("/login");

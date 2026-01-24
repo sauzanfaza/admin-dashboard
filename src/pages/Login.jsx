@@ -9,6 +9,12 @@ export default function Login({setUser}) {
     const handleLogin = (e) => {
         e.preventDefault();
         setUser({name: username})
+
+        //kalo username dan pw kosong
+        if(username.trim() == "" || password.trim() == "") {
+            alert("username & password harus diisi")
+            return
+        }
     
         const users = JSON.parse(localStorage.getItem("users")) || [];
         const user = users.find(
