@@ -12,17 +12,16 @@ export default function Sidebar({ user, isOpen, setIsOpen }) {
     const isLogin = JSON.parse(localStorage.getItem("LoggedInUser")) //ambil user yang login
     if(isLogin) {
       const targetUser = users.find(
-        (u) => u.username === isLogin.username
+        (u) => u.username === isLogin.username //cari username yang sama kaya username yang login
       )
 
       if(targetUser) {
-        targetUser.status = "inactive"
+        targetUser.status = "inactive" //kalo user yang di target ketemu logout, balikin lagi status ke inactive
       }
     }
     
-
-    localStorage.setItem("users", JSON.stringify(users))
-    localStorage.removeItem("LoggedInUser")
+    localStorage.setItem("users", JSON.stringify(users)) //simpen data users yg baru ke users localstorage
+    localStorage.removeItem("LoggedInUser") //dia udah gak login juga statusnya
     navigate("/")
   }
 

@@ -72,12 +72,13 @@ export default function User({user, setUser}) {
                             <div className="text-center">{user.username}</div>
                             <div className="text-center">{user.email}</div>
                              <div className="text-center">{user.date}</div>
+                             {/* tampilkan user status */}
                             <div className={`text-center 
                                 ${user.status?.toLowerCase() === "active" 
                                     ? "text-green-700"
                                     : "text-red-600"
                                 }`}
-                                >{user.status}</div>
+                                >{user.status}</div> 
                         </div>
                     ))}
             </main>

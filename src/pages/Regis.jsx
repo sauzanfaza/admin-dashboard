@@ -31,7 +31,7 @@ export default function Regis() {
         }
 
         const date = new Date().toISOString().slice(0,10)//data dibuat sistem bukan diinput user, jadi pake variabel aja jangan state
-        const status = "inactive" //set inactive karena di aktif ketika login aja.
+        const status = "inactive" //set inactive karena dia aktif ketika login aja. (default)
 
         // kalo gak ada masukan username baru, emailnya, dan pw nya, lalu redirect ke login page
         users.push({ username, email, password, date, status});

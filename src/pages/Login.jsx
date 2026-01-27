@@ -23,9 +23,9 @@ export default function Login({setUser}) {
     
         //kalo user login brrti status aktif
         if (user) {
-            user.status = "active"
-            localStorage.setItem("users", JSON.stringify(users))
-            
+            user.status = "active" //set status jadi aktif
+            localStorage.setItem("users", JSON.stringify(users)) //masukkan lagi ke localstorage users
+
             localStorage.setItem("LoggedInUser", JSON.stringify(user));
             alert("Login Success!");
             navigate("/mainBoard");
