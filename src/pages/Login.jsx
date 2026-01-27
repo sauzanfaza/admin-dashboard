@@ -16,12 +16,16 @@ export default function Login({setUser}) {
             return
         }
     
-        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const users = JSON.parse(localStorage.getItem("users")) || []; //cari user
         const user = users.find(
             (u) => u.username === username && u.password === password
         );
     
+        //kalo user login brrti status aktif
         if (user) {
+            user.status = "active"
+            localStorage.setItem("users", JSON.stringify(users))
+            
             localStorage.setItem("LoggedInUser", JSON.stringify(user));
             alert("Login Success!");
             navigate("/mainBoard");

@@ -6,7 +6,6 @@ import { useSearch } from "../../SearchContext"
 import { useMemo } from "react"
 import SearchBar from "../components/SearchBar"
 import { useEffect } from "react"
-import { data } from "react-router-dom"
 
 export default function User({user, setUser}) {
     const [userForm, setUserForm] = useState([])
@@ -73,14 +72,12 @@ export default function User({user, setUser}) {
                             <div className="text-center">{user.username}</div>
                             <div className="text-center">{user.email}</div>
                              <div className="text-center">{user.date}</div>
-                            {/*<div className={`text-center 
-                                ${user.status.toLowerCase() === "active" 
+                            <div className={`text-center 
+                                ${user.status?.toLowerCase() === "active" 
                                     ? "text-green-700"
-                                    : user.status.toLowerCase() === "deactive" 
-                                    ? "text-yellow-700"
-                                    : "text-red-700"
+                                    : "text-red-600"
                                 }`}
-                                >{user.status}</div> */}
+                                >{user.status}</div>
                         </div>
                     ))}
             </main>

@@ -2,12 +2,26 @@ import { LuLayoutDashboard } from "react-icons/lu"
 import { FaShoppingCart, FaUser } from "react-icons/fa"
 import { BsStack } from "react-icons/bs"
 import { IoMdLogOut } from "react-icons/io"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useFetcher, useNavigate } from "react-router-dom"
 
 export default function Sidebar({ user, isOpen, setIsOpen }) {
   const navigate = useNavigate()
 
   function handleLogout() {
+    const users = JSON.parse(localStorage.getItem("users")) || [] //ambil semua users
+    const isLogin = JSON.parse(localStorage.getItem("LoggedInUser")) //ambil user yang login
+    if(isLogin) {
+      const targetUser = users.find(
+        (u) => u.username === isLogin.username
+      )
+
+      if(targetUser) {
+        targetUser.status = "inactive"
+      }
+    }
+    
+
+    localStorage.setItem("users", JSON.stringify(users))
     localStorage.removeItem("LoggedInUser")
     navigate("/")
   }
